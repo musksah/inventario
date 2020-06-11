@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class SubCategory extends Migration
+class SubCategoryProduct extends Migration
 {
 	public function up()
 	{
@@ -15,19 +15,15 @@ class SubCategory extends Migration
 				'unsigned'       => TRUE,
 				'auto_increment' => TRUE
 			],
-			'name'       => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+			'date'       => [
+				'type'           => 'DATE',
 			],
-			'state'       => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
-			],
-			'quantity_products'       => [
+			'id_sub_category'          => [
 				'type'           => 'INT',
-				'constraint'     => 11,
+				'constraint'     => 9,
+				'unsigned'       => TRUE,
 			],
-			'id_category'          => [
+			'id_product'          => [
 				'type'           => 'INT',
 				'constraint'     => 9,
 				'unsigned'       => TRUE,
@@ -35,13 +31,14 @@ class SubCategory extends Migration
 			'created_at timestamp',
 			'updated_at timestamp',
 		]);
-		$this->forge->addForeignKey('id_category', 'category', 'id');
+		$this->forge->addForeignKey('id_sub_category', 'sub_category', 'id');
+		$this->forge->addForeignKey('id_product', 'product', 'id');
 		$this->forge->addKey('id', TRUE);
-		$this->forge->createTable('sub_category');
+		$this->forge->createTable('subcategory_product');
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('sub_category');
+		$this->forge->dropTable('subcategory_product');
 	}
 }

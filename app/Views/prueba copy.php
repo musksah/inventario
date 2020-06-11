@@ -1,40 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Dashboard Template · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
-
-    <!-- Bootstrap core CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap/dist/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <!-- Custom styles for this template -->
 </head>
 
 <body>
     <div id="app">
+        {{ oye_mi_perro }}
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
             <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,6 +117,8 @@
                             </button>
                         </div>
                     </div>
+
+                    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
                     <h2>Section title</h2>
                     <div class="table-responsive">
@@ -273,17 +252,12 @@
             </div>
         </div>
     </div>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/jquery.slim.min.js'); ?>"></script>
-    <script>
-        window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
-    </script>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/bootstrap.bundle.js'); ?>"></script>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('js/modules/feather-icons/feather.min.js'); ?>"></script>
-    <script src="<?php echo base_url('js/modules/chartjs/chart.js'); ?>"></script>
-    <script src="<?php echo base_url('js/dashboard.js'); ?>"></script>
     <script src="<?php echo base_url('js/vue/vue.js'); ?>"></script>
     <script src="<?php echo base_url('js/source/main.js'); ?>"></script>
+    <script src="<?php echo base_url('css/bootstrap/dist/js/popper.min.js'); ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="<?php echo base_url('css/bootstrap/dist/js/jquery.slim.min.js'); ?>"></script>
+    <script src="<?php echo base_url('css/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
 </body>
 
 </html>

@@ -1,0 +1,25 @@
+scp -P 2225 -r inventario/ usuario36@pasadena.skinatech.com:/home/usuario36/public_html/
+
+Hemos creado accesos, para que pueda crear la BD, subir el proyecto
+y realizar su certificación.
+
+1. Su acceso a todas las plataformas es:
+
+Usuario: usuario36
+Contraseña: Eechoh5coh
+
+2. Conexión por ssh al server:
+
+    ssh -p 2225 usuario36@pasadena.skinatech.com
+
+3. Carpeta para dejar examen
+
+    public_html/
+
+4. Conexión phpmyadmin:
+
+    pasadena.skinatech.com:88/phpmyadmin
+
+5. Acceso al examen por navegador
+
+    pasadena.skinatech.com:88/~usuario36/

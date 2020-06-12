@@ -4,6 +4,10 @@ class Home extends BaseController
 {
 	public function index()
 	{
+		return view('index');
+	}
+
+	public function codeigniter(){
 		return view('welcome_message');
 	}
 

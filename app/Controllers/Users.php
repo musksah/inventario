@@ -26,17 +26,21 @@ class Users extends ResourceController
 		$this->configheader();
 		$data_insert = $this->request->getPost();
 		$this->model->create($data_insert);
-		// echo '<pre>';
-		// print_r($data_insert);
-		// die;
 		return $this->respond(['reponse'=>'Usuario creado correctamente.']);
 	}
 
 	public function list()
 	{
 		$this->configheader();
-		$data = $this->datatables->data($this->model->findAll())->makeHeaders()->get();
+		$data = $this->datatables->data($this->model->getAllItems())->makeHeaders()->get();
 		return $this->respond($data);
+	}
+
+	public function destroy(){
+		$this->configheader();
+		$id = $this->request->getPost()['id'];
+		$this->model->update($id, ['state'=>0]);
+		return $this->respond(['reponse'=>'Usuario desactivado correctamente.']);
 	}
 
 	public function configheader(){

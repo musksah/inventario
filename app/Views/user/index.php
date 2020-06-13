@@ -7,6 +7,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <td style="font-weight:bold;">Acciones</td>
         <th v-for="key in columns"
           @click="sortBy(key)"
           :class="{ active: sortKey == key }">
@@ -18,6 +19,8 @@
     </thead>
     <tbody>
       <tr v-for="entry in filteredData">
+        
+        <td><button class="btn btn-danger mr-2" @click="deleteRegister(entry)"><i class="fas fa-trash"></i></button><button class="btn btn-primary" @click="updateRegister(entry)"><i class="fas fa-pen"></i></button></td>
         <td v-for="key in columns">
           {{entry[key]}}
         </td>

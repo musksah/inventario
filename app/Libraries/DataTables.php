@@ -17,7 +17,7 @@ class DataTables
 
     public function makeHeaders($columns = [])
     {
-        if (count($this->data[0]) > 0) {
+        if (!empty($this->data[0])) {
             foreach ($this->data[0] as $key => $value) {
                 $this->headers[] = [$key];
             }

@@ -20,8 +20,7 @@ class SubCategory extends Migration
 				'constraint'     => '100',
 			],
 			'state'       => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+				'type'           => 'TINYINT',
 			],
 			'quantity_products'       => [
 				'type'           => 'INT',

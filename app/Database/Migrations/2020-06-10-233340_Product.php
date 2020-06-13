@@ -19,6 +19,9 @@ class Product extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '150',
 			],
+			'state'       => [
+				'type'           => 'TINYINT',
+			],
 			'created_at timestamp',
 			'updated_at timestamp',
 		]);

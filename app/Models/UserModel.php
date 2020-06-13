@@ -28,7 +28,8 @@ class UserModel extends Model{
     public function getAllItems()
     {
         return $this->db->table('user')
-        ->select('user.*')
+        ->select('user.id, user.username, user.rol, user.state')
+        ->where('state', 1)
         ->get()
         ->getResultArray();
     }

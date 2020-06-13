@@ -18,8 +18,7 @@ class Category extends Migration
 				'constraint'     => '100',
 			],
 			'state'       => [
-				'type'           => 'VARCHAR',
-				'constraint'     => '100',
+				'type'           => 'TINYINT',
 			],
 			'created_at timestamp',
 			'updated_at timestamp',

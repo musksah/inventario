@@ -26,6 +26,9 @@ class User extends Migration
 			'password'       => [
 				'type'           => 'TEXT',
 			],
+			'state'       => [
+				'type'           => 'TINYINT',
+			],
 			'created_at timestamp',
 			'updated_at timestamp',
 		]);

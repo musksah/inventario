@@ -52,7 +52,13 @@ Vue.component('demo-grid', {
       sortBy: function (key) {
          this.sortKey = key
          this.sortOrders[key] = this.sortOrders[key] * -1
-      }
+      },
+      deleteRegister(row) {
+         this.$parent.deleteRegister(row);
+      },
+      updateRegister(row) {
+         this.$parent.updateRegister(row);
+      },
    }
 })
 
@@ -82,7 +88,6 @@ const vue = new Vue({
       recuperarUsuarios: function () {
          this.$http.get(`${url_base}/admin/users/list`).then(function (res) {
             console.log(res.data);
-            // debugger
             this.gridData = res.data.data;
          }, function () {
             alert('No se han podido recuperar los estados.');
@@ -99,32 +104,30 @@ const vue = new Vue({
          });
       },
       registerUser: function () {
-         // debuggerC
-         // let headers = {
-         //    'Content-Type': 'application/json;charset=utf-8'
-         //  };
          this.$http.post(`${url_base}/admin/users/store`, this.createParams).then(function (res) {
             console.log(res);
             this.recuperarUsuarios();
-            this.closeModal(document.getElementById('btn-close-modal'),'click');
+            this.closeModal(document.getElementById('btn-close-modal'), 'click');
             this.resetform();
          }, function () {
-            alert('No se ha podido crear la tarea.');
+            alert('No se ha podido registrar el usuario.');
          });
       },
-      modificarTarea: function (p_tarea) {
-         this.$http.post('modificar_tarea', p_tarea).then(function () {
-            this.recuperarTareas();
+      deleteRegister(data) {
+         console.log("Se ha dado click en eliminar");
+         console.log(data);
+         this.$http.post(`${url_base}/admin/users/destroy`, this.createParams).then(function (res) {
+            console.log(res);
+            this.recuperarUsuarios();
+            this.closeModal(document.getElementById('btn-close-modal'), 'click');
+            this.resetform();
          }, function () {
-            alert('No se ha podido modificar la tarea.');
+            alert('No se ha podido registrar el usuario.');
          });
       },
-      eliminarTarea: function (p_tarea) {
-         this.$http.post('eliminar_tarea', p_tarea).then(function () {
-            this.recuperarTareas();
-         }, function () {
-            alert('No se ha podido eliminar la tarea.');
-         });
+      updateRegister: function (p_tarea) {
+         console.log("Se ha dado click en editar");
+         console.log(data);
       },
       closeModal: function (el, etype) {
          if (el.fireEvent) {
@@ -135,15 +138,11 @@ const vue = new Vue({
             el.dispatchEvent(evObj);
          }
       },
-      resetform(){
+      resetform() {
          this.form.username = ""
          this.form.rol = null
          this.form.password = ""
       }
-   },
-   created: function () {
-      //    this.recuperarEstados();
-      //    this.recuperarTareas();
    },
    beforeMount() {
       this.recuperarUsuarios();
@@ -154,6 +153,7 @@ const vue = new Vue({
          params.append("username", this.form.username);
          params.append("rol", this.form.rol);
          params.append("password", this.form.password);
+         params.append("state", 1);
          return params;
       }
    },

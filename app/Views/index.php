@@ -8,7 +8,7 @@
     <meta name="author" content="Sebastián Huérfano">
     <title>Sistema de Inventario</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap/dist/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/bootstrap/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/fontawesomefree/css/all.css'); ?>">
     <style>
@@ -42,12 +42,12 @@
             </div>
         </div>
     </div>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/jquery.slim.min.js'); ?>"></script>
+    <script src="<?php echo base_url('css/bootstrap/js/jquery.slim.min.js'); ?>"></script>
     <script>
         window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
     </script>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/bootstrap.bundle.js'); ?>"></script>
-    <script src="<?php echo base_url('css/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo base_url('css/bootstrap/js/bootstrap.bundle.js'); ?>"></script>
+    <script src="<?php echo base_url('css/bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/modules/chartjs/chart.js'); ?>"></script>
 
 </body>

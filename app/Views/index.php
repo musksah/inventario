@@ -46,8 +46,10 @@
     <script>
         window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')
     </script>
+    <script src="<?php echo base_url('css/bootstrap/js/pooper.min.js'); ?>"></script>
     <script src="<?php echo base_url('css/bootstrap/js/bootstrap.bundle.js'); ?>"></script>
     <script src="<?php echo base_url('css/bootstrap/js/bootstrap.min.js'); ?>"></script>
+
     <script src="<?php echo base_url('js/modules/chartjs/chart.js'); ?>"></script>
 
 </body>

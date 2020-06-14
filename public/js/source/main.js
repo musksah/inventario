@@ -116,7 +116,9 @@ const vue = new Vue({
       deleteRegister(data) {
          console.log("Se ha dado click en eliminar");
          console.log(data);
-         this.$http.post(`${url_base}/admin/users/destroy`, this.createParams).then(function (res) {
+         const params = new FormData();
+         params.append("id", data.id)
+         this.$http.post(`${url_base}/admin/users/destroy`, params).then(function (res) {
             console.log(res);
             this.recuperarUsuarios();
             this.closeModal(document.getElementById('btn-close-modal'), 'click');
@@ -155,6 +157,6 @@ const vue = new Vue({
          params.append("password", this.form.password);
          params.append("state", 1);
          return params;
-      }
+      },
    },
 })

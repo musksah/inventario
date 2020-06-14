@@ -38,8 +38,13 @@ class Users extends ResourceController
 
 	public function destroy(){
 		$this->configheader();
+		// echo '<pre>';
+		// print_r($id);
+		// die;
 		$id = $this->request->getPost()['id'];
-		$this->model->update($id, ['state'=>0]);
+		// echo $id;
+		// die;
+		$this->model->destroy($id);
 		return $this->respond(['reponse'=>'Usuario desactivado correctamente.']);
 	}
 

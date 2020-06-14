@@ -4,7 +4,8 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model{
+class UserModel extends Model
+{
     protected $table      = 'user';
     protected $primaryKey = 'id';
 
@@ -12,9 +13,9 @@ class UserModel extends Model{
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
-        'id', 
-        'username', 
-        'rol', 
+        'id',
+        'username',
+        'rol',
         'password',
         'created_at',
         'updated_at',
@@ -28,21 +29,31 @@ class UserModel extends Model{
     public function getAllItems()
     {
         return $this->db->table('user')
-        ->select('user.id, user.username, user.rol, user.state')
-        ->where('state', 1)
-        ->get()
-        ->getResultArray();
+            ->select('user.id, user.username, user.rol, user.state')
+            ->where('state', 1)
+            ->get()
+            ->getResultArray();
     }
 
-    public function create($data){
+    public function destroy($id)
+    {
+        return $this->builder()
+            ->where('id',$id)
+            ->set(['state' => 0])
+            ->update();
+    }
+
+    public function create($data)
+    {
         return $this->builder()->insert($data);
     }
 
-    public function empleadosSucursal(){
+    public function empleadosSucursal()
+    {
         return $this->db->table('sucursal')
-        ->select('empleado.nombre, empleado.apellido, empleado.correo, sucursal.nombre AS `sucursal`')
-        ->join('empleado','empleado.id_sucursal = sucursal.id_sucursal')
-        ->get()
-        ->getResultArray();
+            ->select('empleado.nombre, empleado.apellido, empleado.correo, sucursal.nombre AS `sucursal`')
+            ->join('empleado', 'empleado.id_sucursal = sucursal.id_sucursal')
+            ->get()
+            ->getResultArray();
     }
 }

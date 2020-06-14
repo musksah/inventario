@@ -29,6 +29,23 @@ class Users extends ResourceController
 		return $this->respond(['reponse'=>'Usuario creado correctamente.']);
 	}
 
+	public function updating()
+	{
+		$this->configheader();
+		$data_update = $this->request->getPost();
+		if(!empty($data_update['password'])){
+			$data_update['password'] = password_hash($data_update['password'], PASSWORD_DEFAULT);
+		}
+		$id = $data_update['id'];
+		unset($data_update['id']);
+		// echo '<pre>';
+		// print_r($data_update);
+		// echo ' id '.$id.' ';
+		// die;
+		$this->model->toUpdate($id,$data_update);
+		return $this->respond(['reponse'=>'Usuario actualizado correctamente.']);
+	}
+
 	public function list()
 	{
 		$this->configheader();

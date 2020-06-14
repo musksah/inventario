@@ -37,6 +37,7 @@ $routes->group('admin', function ($routes) {
 	});
 	$routes->post('users/store', 'Users::store');
 	$routes->post('users/destroy', 'Users::destroy');
+	$routes->post('users/updating', 'Users::updating');
 });
 $routes->get('/', 'Users::index');
 $routes->get('/info', 'Home::codeigniter');

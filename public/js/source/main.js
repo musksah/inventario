@@ -17,7 +17,7 @@ Vue.component('demo-grid', {
       })
       return {
          sortKey: '',
-         sortOrders: sortOrders
+         sortOrders: sortOrders,
       }
    },
    computed: {
@@ -82,7 +82,16 @@ const vue = new Vue({
       searchQuery: '',
       gridColumns: ['id', 'username', 'rol'],
       gridData: [],
-      modal_title: "Registro de Usuarios"
+      modal_title: "Registro de Usuarios",
+      modal_title_update: "Actualizar Usuario",
+      form_update:{
+         ch_password: false,
+         id: '',
+         username: '',
+         rol: null,
+         password: '',
+         state: null,
+      }
    },
    methods: {
       recuperarUsuarios: function () {
@@ -127,9 +136,26 @@ const vue = new Vue({
             alert('No se ha podido registrar el usuario.');
          });
       },
-      updateRegister: function (p_tarea) {
+      updateUser(){
+         console.log(this.form_update);
+         this.$http.post(`${url_base}/admin/users/updating`, this.createParamsUpdate).then(function (res) {
+            console.log(res);
+            this.closeModal(document.getElementById('btn-close-modal-update'), 'click');
+            this.recuperarUsuarios();
+         }, function () {
+            alert('No se ha podido registrar el usuario.');
+         });
+      },
+      updateRegister(data) {
          console.log("Se ha dado click en editar");
          console.log(data);
+         this.form_update.username = data.username 
+         this.form_update.rol = data.rol 
+         this.form_update.state = data.state 
+         this.form_update.id = data.id 
+         this.form_update.password = "" 
+         this.form_update.ch_password = false 
+         this.closeModal(document.getElementById('btn-update-user'), 'click');
       },
       closeModal: function (el, etype) {
          if (el.fireEvent) {
@@ -156,6 +182,17 @@ const vue = new Vue({
          params.append("rol", this.form.rol);
          params.append("password", this.form.password);
          params.append("state", 1);
+         return params;
+      },
+      createParamsUpdate() {
+         const params = new FormData();
+         if (this.form_update.ch_password) {
+            params.append("password", this.form_update.password);
+         }
+         params.append("id", this.form_update.id);
+         params.append("username", this.form_update.username);
+         params.append("rol", this.form_update.rol);
+         params.append("state", this.form_update.state);
          return params;
       },
    },

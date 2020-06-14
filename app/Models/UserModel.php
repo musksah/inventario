@@ -43,6 +43,14 @@ class UserModel extends Model
             ->update();
     }
 
+    public function toUpdate($id, $dataUpdate)
+    {
+        return $this->builder()
+            ->where('id',$id)
+            ->set($dataUpdate)
+            ->update();
+    }
+
     public function create($data)
     {
         return $this->builder()->insert($data);

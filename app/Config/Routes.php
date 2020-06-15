@@ -39,11 +39,19 @@ $routes->group('admin', function ($routes) {
 	$routes->post('users/updating', 'Users::updating');
 	
 	// Rutas del Módulo de Categorias
-	$routes->get('/categories', 'Categories::index');
+	$routes->get('categories', 'Categories::index');
 	$routes->get('categories/list', 'Categories::list');
 	$routes->post('categories/store', 'Categories::store');
 	$routes->post('categories/destroy', 'Categories::destroy');
 	$routes->post('categories/updating', 'Categories::updating');
+	$routes->get('categories/selectb', 'Categories::getSelectb');
+	
+	// Rutas del Módulo de SubCategorias
+	$routes->get('sub_categories', 'SubCategories::index');
+	$routes->get('sub_categories/list', 'SubCategories::list');
+	$routes->post('sub_categories/store', 'SubCategories::store');
+	$routes->post('sub_categories/destroy', 'SubCategories::destroy');
+	$routes->post('sub_categories/updating', 'SubCategories::updating');
 });
 
 // Otras Rutas

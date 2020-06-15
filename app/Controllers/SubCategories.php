@@ -6,9 +6,9 @@ use App\Libraries\DataTables;
 use App\Libraries\SelectB;
 use CodeIgniter\RESTful\ResourceController;
 
-class Categories extends ResourceController
+class SubCategories extends ResourceController
 {
-	protected $modelName = '\App\Models\CategoryModel';
+	protected $modelName = '\App\Models\SubCategoryModel';
 	protected $format    = 'json';
 	private $datatables = null;
 	private $selectb = null;
@@ -21,7 +21,7 @@ class Categories extends ResourceController
 
 	public function index()
 	{
-		return view('category/index');
+		return view('subcategory/index');
 	}
 
 	public function store()
@@ -32,7 +32,7 @@ class Categories extends ResourceController
 		// print_r($data_insert);
 		// die;
 		$this->model->create($data_insert);
-		return $this->respond(['reponse'=>'Usuario creado correctamente.']);
+		return $this->respond(['reponse'=>'SubCategoría creada correctamente.']);
 	}
 
 	public function updating()
@@ -49,7 +49,7 @@ class Categories extends ResourceController
 		// echo ' id '.$id.' ';
 		// die;
 		$this->model->toUpdate($id,$data_update);
-		return $this->respond(['reponse'=>'Usuario actualizado correctamente.']);
+		return $this->respond(['reponse'=>'SubCategoría actualizada correctamente.']);
 	}
 
 	public function list()
@@ -68,13 +68,7 @@ class Categories extends ResourceController
 		// echo $id;
 		// die;
 		$this->model->destroy($id);
-		return $this->respond(['reponse'=>'Categoría desactivada correctamente.']);
-	}
-
-	public function getSelectb(){
-		$query = $this->model->findAll();
-		$query = $this->selectb->data($query)->make('id','name')->get();
-		return $this->respond($query);
+		return $this->respond(['reponse'=>'SubCategoría desactivada correctamente.']);
 	}
 
 	public function configheader(){

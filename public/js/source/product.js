@@ -1,6 +1,6 @@
 // register the grid component
-const url_base = "http://127.0.0.1/inventario/public/admin/sub_categories";
-const url_base_category = "http://127.0.0.1/inventario/public/admin/categories";
+const url_base = "http://127.0.0.1/inventario/public/admin/products";
+const url_base_sub_category = "http://127.0.0.1/inventario/public/admin/sub_categories";
 
 Vue.component('demo-grid', {
    template: '#grid-template',
@@ -68,7 +68,7 @@ Vue.use(VueResource)
 
 const vue = new Vue({
    // router,
-   el: '#app_subcategories',
+   el: '#app_product',
    data: {
       cargando_tareas: true,
       tarea_nueva: {
@@ -77,49 +77,47 @@ const vue = new Vue({
       },
       form: {
          name: '',
-         quantity_products: '',
-         id_category: null,
+         id_sub_category: ['null'],
       },
       searchQuery: '',
       gridColumns: ['id','name','quantity_products','id_category'],
       gridData: [],
-      modal_title: "Registro de SubCategorías",
-      modal_title_update: "Actualizar SubCategoría",
+      modal_title: "Registro de Productos",
+      modal_title_update: "Actualizar Producto",
       form_update:{
          id: '',
          name: '',
-         quantity_products: '',
-         id_category: null,
+         id_sub_category: ['null'],
          state: null,
       },
-      options_form_category:[]
+      options_form_subcategory:[]
    },
    methods: {
-      recuperarSubCategorias: function () {
+      recuperarProductos: function () {
          this.$http.get(`${url_base}/list`).then(function (res) {
             console.log(res.data);
             this.gridData = res.data.data;
          }, function () {
-            alert('No se han podido recuperar las subcategorías.');
+            alert('No se han podido recuperar los productos.');
          });
       },
-      getSelectCategorias() {
-         this.$http.get(`${url_base_category}/selectb`).then(function (res) {
+      getSelectSubCategorias() {
+         this.$http.get(`${url_base_sub_category}/selectb`).then(function (res) {
             console.log(res.data);
             console.log(typeof res.data);
-            this.options_form_category = res.data;
+            this.options_form_subcategory = res.data;
          }, function () {
             alert('No se ha podido recuperar el select categorías.');
          });
       },
-      registerSubCategory: function () {
+      registerProduct: function () {
          this.$http.post(`${url_base}/store`, this.createParams).then(function (res) {
             console.log(res);
-            this.recuperarSubCategorias();
+            this.recuperarProductos();
             this.closeModal(document.getElementById('btn-close-modal'), 'click');
             this.resetform();
          }, function () {
-            alert('No se ha podido registrar la subcategoría.');
+            alert('No se ha podido registrar el producto.');
          });
       },
       deleteRegister(data) {
@@ -129,21 +127,21 @@ const vue = new Vue({
          params.append("id", data.id)
          this.$http.post(`${url_base}/destroy`, params).then(function (res) {
             console.log(res);
-            this.recuperarSubCategorias();
+            this.recuperarProductos();
             this.closeModal(document.getElementById('btn-close-modal'), 'click');
             this.resetform();
          }, function () {
-            alert('No se ha podido desactivar la subcategoría.');
+            alert('No se ha podido desactivar el producto.');
          });
       },
-      updateSubCategory(){
+      updateProduct(){
          console.log(this.form_update);
          this.$http.post(`${url_base}/updating`, this.createParamsUpdate).then(function (res) {
             console.log(res);
             this.closeModal(document.getElementById('btn-close-modal-update'), 'click');
-            this.recuperarSubCategorias();
+            this.recuperarProductos();
          }, function () {
-            alert('No se ha podido actualizar la subcategoría.');
+            alert('No se ha podido actualizar el producto.');
          });
       },
       updateRegister(data) {
@@ -172,15 +170,14 @@ const vue = new Vue({
       }
    },
    beforeMount() {
-      this.recuperarSubCategorias();
-      this.getSelectCategorias();
+      this.recuperarProductos();
+      this.getSelectSubCategorias();
    },
    computed: {
       createParams() {
          const params = new FormData();
          params.append("name", this.form.name);
-         params.append("id_category", this.form.id_category);
-         params.append("quantity_products", 0);
+         params.append("id_sub_category", this.form.id_sub_category);
          params.append("state", 1);
          return params;
       },

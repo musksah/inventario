@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->group('admin', function ($routes) {
 	// Rutas del Módulo de Usuarios
+	$routes->get('/', 'Users::index');
 	$routes->get('users/list', 'Users::list');
 	$routes->post('users/store', 'Users::store');
 	$routes->post('users/destroy', 'Users::destroy');
@@ -52,10 +53,17 @@ $routes->group('admin', function ($routes) {
 	$routes->post('sub_categories/store', 'SubCategories::store');
 	$routes->post('sub_categories/destroy', 'SubCategories::destroy');
 	$routes->post('sub_categories/updating', 'SubCategories::updating');
+	$routes->get('sub_categories/selectb', 'SubCategories::getSelectb');
+	
+	// Rutas del Módulo de Productos
+	$routes->get('products', 'Products::index');
+	$routes->get('products/list', 'Products::list');
+	$routes->post('products/store', 'Products::store');
+	$routes->post('products/destroy', 'Products::destroy');
+	$routes->post('products/updating', 'Products::updating');
 });
 
 // Otras Rutas
-$routes->get('/', 'Users::index');
 $routes->get('/info', 'Home::codeigniter');
 
 /**

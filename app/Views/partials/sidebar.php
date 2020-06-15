@@ -2,7 +2,7 @@
     <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="http://127.0.0.1/inventario/public/admin/users">
+                <a class="nav-link" href="http://127.0.0.1/inventario/public/admin">
                     <i class="fas fa-users"></i>
                     Usuarios
                 </a>

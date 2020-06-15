@@ -3,25 +3,22 @@
 namespace App\Controllers;
 
 use App\Libraries\DataTables;
-use App\Libraries\SelectB;
 use CodeIgniter\RESTful\ResourceController;
 
-class SubCategories extends ResourceController
+class Products extends ResourceController
 {
-	protected $modelName = '\App\Models\SubCategoryModel';
+	protected $modelName = '\App\Models\ProductModel';
 	protected $format    = 'json';
 	private $datatables = null;
-	private $selectb = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
-		$this->selectb = new SelectB();
 	}
 
 	public function index()
 	{
-		return view('subcategory/index');
+		return view('product/index');
 	}
 
 	public function store()
@@ -31,8 +28,18 @@ class SubCategories extends ResourceController
 		// echo '<pre>';
 		// print_r($data_insert);
 		// die;
-		$this->model->create($data_insert);
-		return $this->respond(['reponse'=>'SubCategoría creada correctamente.']);
+		$list_id_subcategories = explode(',',$data_insert['id_sub_category']);
+        unset($data_insert['id_sub_category']);
+		echo ' insert id <pre> ';
+		// print_r($data_insert);
+		// die;
+		$this->model->save($data_insert);
+		$id = $this->model->getInsertID();
+		foreach ($list_id_subcategories as $key => $value) {
+			
+		}
+		die;
+		return $this->respond(['reponse'=>'Producto creado correctamente.']);
 	}
 
 	public function updating()
@@ -49,7 +56,7 @@ class SubCategories extends ResourceController
 		// echo ' id '.$id.' ';
 		// die;
 		$this->model->toUpdate($id,$data_update);
-		return $this->respond(['reponse'=>'SubCategoría actualizada correctamente.']);
+		return $this->respond(['reponse'=>'Producto actualizado correctamente.']);
 	}
 
 	public function list()
@@ -68,13 +75,7 @@ class SubCategories extends ResourceController
 		// echo $id;
 		// die;
 		$this->model->destroy($id);
-		return $this->respond(['reponse'=>'SubCategoría desactivada correctamente.']);
-	}
-
-	public function getSelectb(){
-		$query = $this->model->findAll();
-		$query = $this->selectb->data($query)->make('id','name')->get();
-		return $this->respond($query);
+		return $this->respond(['reponse'=>'Producto desactivado correctamente.']);
 	}
 
 	public function configheader(){

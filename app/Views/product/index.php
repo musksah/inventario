@@ -28,10 +28,10 @@
   </table>
   </div>
 </script>
-<div id="app_subcategories">
+<div id="app_product">
   <div class="card mt-4">
     <div class="card-body mb-3">
-      <h4 class="card-title">SubCategorías</h4>
+      <h4 class="card-title">Productos</h4>
       <hr class="mb-5">
       <form id="search">
         Buscar <input name="query" v-model="searchQuery">
@@ -40,30 +40,30 @@
       </demo-grid>
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary" id="btn-register-user" data-toggle="modal" data-target="#registerSubCategoryModal">Registrar</button>
-      <button class="btn btn-primary" id="btn-update-user" data-toggle="modal" data-target="#updateSubCategoryModal" hidden></button>
+      <button class="btn btn-primary" id="btn-register-product" data-toggle="modal" data-target="#registerProductModal">Registrar</button>
+      <button class="btn btn-primary" id="btn-update-product" data-toggle="modal" data-target="#updateProductModal" hidden></button>
     </div>
   </div>
-  <!-- Modal Registar SubCategoría -->
-  <div class="modal fade" id="registerSubCategoryModal" tabindex="-1" role="dialog" aria-labelledby="registerSubCategoryModal" aria-hidden="true">
+  <!-- Modal Registar Producto -->
+  <div class="modal fade" id="registerProductModal" tabindex="-1" role="dialog" aria-labelledby="registerProductModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{ modal_title }}</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{{ modal_title }}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="registerSubCategory">
+          <form @submit.prevent="registerProduct">
             <div class="form-group">
-              <label for="exampleInputEmail1">Nombre SubCategoría</label>
-              <input v-model="form.name" type="text" class="form-control" placeholder="Ingresar nombre subcategoría" required>
+              <label for="InputProductName">Nombre producto</label>
+              <input v-model="form.name" type="text" class="form-control" id="InputProductName" placeholder="Ingresar nombre" required>
             </div>
             <div class="form-group">
-              <label for="selectRegistesCategory">Categoría</label>
-              <select v-model="form.id_category" id="selectRegistesCategory" class="custom-select" required>
-                <option v-for="option_category in options_form_category" :value="option_category.value" >{{ option_category.text }}</option>
+              <label for="selectRegistesSubCategory">SubCategoría</label>
+              <select v-model="form.id_sub_category" id="selectRegistesSubCategory" class="custom-select" multiple required>
+                <option v-for="option_category in options_form_subcategory" :value="option_category.value" >{{ option_category.text }}</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -75,8 +75,8 @@
       </div>
     </div>
   </div>
-  <!-- Modal Actualizar SubCategoría -->
-  <div class="modal fade" id="updateSubCategoryModal" tabindex="-1" role="dialog" aria-labelledby="updateSubCategoryModal" aria-hidden="true">
+  <!-- Modal Actualizar Categoría -->
+  <div class="modal fade" id="updateProductModal" tabindex="-1" role="dialog" aria-labelledby="updateProductModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -86,16 +86,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="updateSubCategory">
+          <form @submit.prevent="updateProduct">
             <div class="form-group">
               <label for="exampleInputEmail1">Nombre Categoría</label>
               <input v-model="form_update.name" type="text" class="form-control" placeholder="Ingresar Categoría" required>
-            </div>
-            <div class="form-group">
-              <label for="selectRegistesCategory">Categoría</label>
-              <select v-model="form_update.id_category" id="selectRegistesCategory" class="custom-select" required>
-                <option v-for="option_category in options_form_category" :value="option_category.value" >{{ option_category.text }}</option>
-              </select>
             </div>
             <div class="form-group">
               <label for="selectUpdateState">Estado</label>
@@ -117,5 +111,5 @@
 </div>
 <script src="<?php echo base_url('js/vue/vue-source.js'); ?>"></script>
 <script src="<?php echo base_url('js/vue/vue.js'); ?>"></script>
-<script src="<?php echo base_url('js/source/subcategory.js'); ?>" type="module"></script>
+<script src="<?php echo base_url('js/source/product.js'); ?>" type="module"></script>
 <?= $this->endSection() ?>

@@ -32,13 +32,21 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->group('admin', function ($routes) {
-	$routes->group('users', function ($routes) {
-		$routes->add('list', 'Users::list');
-	});
+	// Rutas del Módulo de Usuarios
+	$routes->get('users/list', 'Users::list');
 	$routes->post('users/store', 'Users::store');
 	$routes->post('users/destroy', 'Users::destroy');
 	$routes->post('users/updating', 'Users::updating');
+	
+	// Rutas del Módulo de Categorias
+	$routes->get('/categories', 'Categories::index');
+	$routes->get('categories/list', 'Categories::list');
+	$routes->post('categories/store', 'Categories::store');
+	$routes->post('categories/destroy', 'Categories::destroy');
+	$routes->post('categories/updating', 'Categories::updating');
 });
+
+// Otras Rutas
 $routes->get('/', 'Users::index');
 $routes->get('/info', 'Home::codeigniter');
 

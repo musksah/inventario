@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class CategoryModel extends Model
 {
-    protected $table      = 'user';
+    protected $table      = 'category';
     protected $primaryKey = 'id';
 
     protected $returnType     = 'array';
@@ -14,9 +14,8 @@ class UserModel extends Model
 
     protected $allowedFields = [
         'id',
-        'username',
-        'rol',
-        'password',
+        'name',
+        'state',
         'created_at',
         'updated_at',
     ];
@@ -28,8 +27,8 @@ class UserModel extends Model
 
     public function getAllItems()
     {
-        return $this->db->table('user')
-            ->select('user.id, user.username, user.rol, user.state')
+        return $this->db->table('category')
+            ->select('category.id, category.name, category.state')
             ->where('state', 1)
             ->get()
             ->getResultArray();

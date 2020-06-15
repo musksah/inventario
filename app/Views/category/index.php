@@ -28,7 +28,7 @@
   </table>
   </div>
 </script>
-<div id="app_users">
+<div id="app_categories">
   <div class="card mt-4">
     <div class="card-body mb-3">
       <h4 class="card-title">Usuarios</h4>
@@ -40,12 +40,12 @@
       </demo-grid>
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary" id="btn-register-user" data-toggle="modal" data-target="#registerUserModal">Registrar</button>
-      <button class="btn btn-primary" id="btn-update-user" data-toggle="modal" data-target="#updateUserModal" hidden></button>
+      <button class="btn btn-primary" id="btn-register-user" data-toggle="modal" data-target="#registerCategoryModal">Registrar</button>
+      <button class="btn btn-primary" id="btn-update-user" data-toggle="modal" data-target="#updateCategoryModal" hidden></button>
     </div>
   </div>
-  <!-- Modal Registar Usuario -->
-  <div class="modal fade" id="registerUserModal" tabindex="-1" role="dialog" aria-labelledby="registerUserModal" aria-hidden="true">
+  <!-- Modal Registar Categoría -->
+  <div class="modal fade" id="registerCategoryModal" tabindex="-1" role="dialog" aria-labelledby="registerCategoryModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -55,22 +55,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="registerUser">
+          <form @submit.prevent="registerCategory">
             <div class="form-group">
-              <label for="exampleInputEmail1">Usuario</label>
-              <input v-model="form.username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingresar usuario" required>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Rol</label>
-              <select v-model="form.rol" class="custom-select" required>
-                <option selected value=null>Seleccionar...</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Básico">Básico</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Contraseña</label>
-              <input v-model="form.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+              <label for="exampleInputEmail1">Nombre Categoría</label>
+              <input v-model="form.name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingresar Categoría" required>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
@@ -81,8 +69,8 @@
       </div>
     </div>
   </div>
-  <!-- Modal Actualizar Usuario -->
-  <div class="modal fade" id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="registerUserModal" aria-hidden="true">
+  <!-- Modal Actualizar Categoría -->
+  <div class="modal fade" id="updateCategoryModal" tabindex="-1" role="dialog" aria-labelledby="updateCategoryModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -92,30 +80,14 @@
           </button>
         </div>
         <div class="modal-body">
-          <form @submit.prevent="updateUser">
+          <form @submit.prevent="updateCategory">
             <div class="form-group">
-              <label for="exampleInputEmail1">Usuario</label>
-              <input v-model="form_update.username" :value="form_update.username" type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingresar usuario" required>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Rol</label>
-              <select v-model="form_update.rol" :value="form_update.rol" class="custom-select" required>
-                <option selected value=null>Seleccionar...</option>
-                <option value="Administrador">Administrador</option>
-                <option value="Básico">Básico</option>
-              </select>
-            </div>
-            <div class="form-check mb-2">
-              <input type="checkbox" v-model="form_update.ch_password" class="form-check-input" id="exampleCheck1" :required="form_update.ch_password">
-              <label class="form-check-label" for="exampleCheck1">Actualizar contraseña</label>
-            </div>
-            <div class="form-group" v-if="form_update.ch_password">
-              <label for="exampleInputPassword1">Nueva contraseña</label>
-              <input v-model="form_update.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
+              <label for="exampleInputEmail1">Nombre Categoría</label>
+              <input v-model="form_update.name" type="text" class="form-control" placeholder="Ingresar Categoría" required>
             </div>
             <div class="form-group">
-              <label for="InputStateUpdate">Estado</label>
-              <select v-model="form_update.state" :value="form_update.state" class="custom-select" required>
+              <label for="selectUpdateState">Estado</label>
+              <select v-model="form_update.state" :value="form_update.state" id="selectUpdateState" class="custom-select" required>
                 <option selected value=null>Seleccionar...</option>
                 <option value="1">Activo</option>
                 <option value="0">Inactivo</option>
@@ -133,5 +105,5 @@
 </div>
 <script src="<?php echo base_url('js/vue/vue-source.js'); ?>"></script>
 <script src="<?php echo base_url('js/vue/vue.js'); ?>"></script>
-<script src="<?php echo base_url('js/source/user.js'); ?>" type="module"></script>
+<script src="<?php echo base_url('js/source/category.js'); ?>" type="module"></script>
 <?= $this->endSection() ?>

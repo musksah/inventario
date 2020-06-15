@@ -27,11 +27,6 @@ class UserSeeder extends \CodeIgniter\Database\Seeder
             ],
         ];
 
-        // Simple Queries
-        // $this->db->query("INSERT INTO users (username, email) VALUES(:username:, :email:)",
-        //         $data
-        // );
-
         // Using Query Builder
         foreach ($data as $register) {
             $this->db->table('user')->insert($register);

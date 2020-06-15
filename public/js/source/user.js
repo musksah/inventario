@@ -1,5 +1,5 @@
 // register the grid component
-const url_base = "http://127.0.0.1/inventario/public";
+const url_base = "http://127.0.0.1/inventario/public/admin/users";
 
 Vue.component('demo-grid', {
    template: '#grid-template',
@@ -95,25 +95,15 @@ const vue = new Vue({
    },
    methods: {
       recuperarUsuarios: function () {
-         this.$http.get(`${url_base}/admin/users/list`).then(function (res) {
+         this.$http.get(`${url_base}/list`).then(function (res) {
             console.log(res.data);
             this.gridData = res.data.data;
          }, function () {
             alert('No se han podido recuperar los estados.');
          });
       },
-      recuperarTareas: function () {
-         this.cargando_tareas = true;
-         this.$http.get('recuperar_tareas').then(function (respuesta) {
-            this.tareas = respuesta.body;
-            this.cargando_tareas = false;
-         }, function () {
-            alert('No se han podido recuperar los estados.');
-            this.cargando_tareas = false;
-         });
-      },
       registerUser: function () {
-         this.$http.post(`${url_base}/admin/users/store`, this.createParams).then(function (res) {
+         this.$http.post(`${url_base}/store`, this.createParams).then(function (res) {
             console.log(res);
             this.recuperarUsuarios();
             this.closeModal(document.getElementById('btn-close-modal'), 'click');
@@ -127,7 +117,7 @@ const vue = new Vue({
          console.log(data);
          const params = new FormData();
          params.append("id", data.id)
-         this.$http.post(`${url_base}/admin/users/destroy`, params).then(function (res) {
+         this.$http.post(`${url_base}/destroy`, params).then(function (res) {
             console.log(res);
             this.recuperarUsuarios();
             this.closeModal(document.getElementById('btn-close-modal'), 'click');
@@ -138,7 +128,7 @@ const vue = new Vue({
       },
       updateUser(){
          console.log(this.form_update);
-         this.$http.post(`${url_base}/admin/users/updating`, this.createParamsUpdate).then(function (res) {
+         this.$http.post(`${url_base}/updating`, this.createParamsUpdate).then(function (res) {
             console.log(res);
             this.closeModal(document.getElementById('btn-close-modal-update'), 'click');
             this.recuperarUsuarios();

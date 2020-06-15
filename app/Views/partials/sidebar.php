@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="http://127.0.0.1/inventario/public/categories/list">
                     <i class="fas fa-box"></i>
                     Categorías
                 </a>

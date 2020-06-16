@@ -66,6 +66,13 @@ $routes->group('admin', function ($routes) {
 // Otras Rutas
 $routes->get('/info', 'Home::codeigniter');
 
+$routes->group('auth', function ($routes) {
+	$routes->get('login', 'Login::index');
+	$routes->post('login/check', 'Login::checkLogin');
+});
+
+$routes->get('prueba', 'Home::check_database');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

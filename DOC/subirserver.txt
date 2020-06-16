@@ -1,4 +1,7 @@
-scp -P 2225 -r inventario/ usuario36@pasadena.skinatech.com:/home/usuario36/public_html/
+scp -P 2225 -r inventario/ usuario36@pasadena.skinatech.com:/home/usuario36/public_html
+scp -P 2225 -r inventario/app/Config/Database.php usuario36@pasadena.skinatech.com:/home/usuario36/public_html/inventario/app/Config/Database.php
+scp -P 2225 -r inventario/app/Controllers/Home.php usuario36@pasadena.skinatech.com:/home/usuario36/public_html/inventario/app/Controllers/Home.php
+scp -P 2225 -r inventario/public/.htaccess usuario36@pasadena.skinatech.com:/home/usuario36/public_html/inventario/public/.htaccess
 
 Hemos creado accesos, para que pueda crear la BD, subir el proyecto
 y realizar su certificación.

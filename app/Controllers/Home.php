@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 class Home extends BaseController
 {
@@ -7,11 +9,22 @@ class Home extends BaseController
 		return view('index');
 	}
 
-	public function codeigniter(){
+	public function codeigniter()
+	{
 		return view('welcome_message');
 	}
 
-	
+	public function check_database()
+	{
+
+		// ini_set('display_errors', '1');
+		// echo '<pre>';
+		// $db = \Config\Database::connect();
+		$db = ['1','2'];
+		print_r($db);
+	}
+
+
 	//--------------------------------------------------------------------
 
 }

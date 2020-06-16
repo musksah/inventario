@@ -6,6 +6,8 @@ use App\Libraries\DataTables;
 use App\Libraries\SelectB;
 use CodeIgniter\RESTful\ResourceController;
 use App\Controllers\SessionController;
+use App\Models\SubCategoryModel;
+use App\Models\SubCategoryProductModel;
 
 class Categories extends ResourceController
 {
@@ -14,12 +16,16 @@ class Categories extends ResourceController
 	private $datatables = null;
 	private $selectb = null;
 	protected $session_controller = null;
+	protected $subcategoryModel = null;
+	protected $subcategoryProductModel = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
 		$this->selectb = new SelectB();
 		$this->session_controller = new SessionController();
+		$this->subcategoryModel = new SubCategoryModel();
+		$this->subcategoryProductModel = new SubCategoryProductModel();
 	}
 
 	public function index()
@@ -68,10 +74,17 @@ class Categories extends ResourceController
 
 	public function destroy(){
 		$this->configheader();
-		// echo '<pre>';
-		// print_r($id);
-		// die;
 		$id = $this->request->getPost()['id'];
+		$subcategories = $this->subcategoryModel->getDataByid($id);
+		if(!empty($subcategories)){
+			foreach ($subcategories as $val_subcategory) {
+				$this->subcategoryModel->destroy($val_subcategory['id']);
+				$this->subcategoryProductModel->destroyByField('id_sub_category',$val_subcategory['id']);
+			}
+		}
+		// echo '<pre>';
+		// print_r($subcategories);
+		// die;
 		// echo $id;
 		// die;
 		$this->model->destroy($id);

@@ -37,6 +37,14 @@ class SubCategoryModel extends Model
             ->getResultArray();
     }
 
+    public function getDataByid($id){
+        return $this->db->table('sub_category')
+            ->where('sub_category.id_category', $id)
+            ->where('sub_category.state',1)
+            ->get()
+            ->getResultArray();
+    }
+
     public function destroy($id)
     {
         return $this->builder()

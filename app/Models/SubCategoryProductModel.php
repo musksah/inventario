@@ -42,6 +42,11 @@ class SubCategoryProductModel extends Model
             ->set($dataUpdate)
             ->update();
     }
+    
+    public function destroyByField($field,$value){
+		return $this->builder()
+            ->where($field,$value)->delete();
+	}
 
     public function create($data)
     {

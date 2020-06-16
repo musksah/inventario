@@ -6,6 +6,7 @@ use App\Libraries\DataTables;
 use App\Libraries\ArrayQueries;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\SubCategoryProductModel;
+use App\Controllers\SessionController;
 
 class Products extends ResourceController
 {
@@ -14,17 +15,23 @@ class Products extends ResourceController
 	private $datatables = null;
 	private $array_query = null;
 	private $subcategoryproduct = null;
+	protected $session_controller = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
 		$this->array_query = new ArrayQueries();
 		$this->subcategoryproduct = new SubCategoryProductModel();
+		$this->session_controller = new SessionController();
 	}
 
 	public function index()
 	{
-		return view('product/index');
+		if ($this->session_controller->hasSession()) {
+			$data['rol'] = $this->session_controller->getRol();
+			return view('product/index', $data);
+		}
+		return view('auth/login');
 	}
 
 	public function store()
@@ -34,8 +41,8 @@ class Products extends ResourceController
 		// echo '<pre>';
 		// print_r($data_insert);
 		// die;
-		$list_id_subcategories = explode(',',$data_insert['id_sub_category']);
-        unset($data_insert['id_sub_category']);
+		$list_id_subcategories = explode(',', $data_insert['id_sub_category']);
+		unset($data_insert['id_sub_category']);
 		// echo ' insert id <pre> ';
 		// print_r($list_id_subcategories);
 		// die;
@@ -43,20 +50,20 @@ class Products extends ResourceController
 		$id_product = $this->model->getInsertID();
 		// echo ' insert sub';
 		foreach ($list_id_subcategories as $id_category) {
-			$data_in['date'] = date("Y-m-d H:i:s"); 
-			$data_in['id_sub_category'] = $id_category; 
-			$data_in['id_product'] = $id_product; 
+			$data_in['date'] = date("Y-m-d H:i:s");
+			$data_in['id_sub_category'] = $id_category;
+			$data_in['id_product'] = $id_product;
 			$this->subcategoryproduct->save($data_in);
 		}
 		// die;
-		return $this->respond(['reponse'=>'Producto creado correctamente.']);
+		return $this->respond(['reponse' => 'Producto creado correctamente.']);
 	}
 
 	public function updating()
 	{
 		$this->configheader();
 		$data_update = $this->request->getPost();
-		if(!empty($data_update['password'])){
+		if (!empty($data_update['password'])) {
 			$data_update['password'] = password_hash($data_update['password'], PASSWORD_DEFAULT);
 		}
 		$id = $data_update['id'];
@@ -65,15 +72,15 @@ class Products extends ResourceController
 		// print_r($data_update);
 		// echo ' id '.$id.' ';
 		// die;
-		$this->model->toUpdate($id,$data_update);
-		return $this->respond(['reponse'=>'Producto actualizado correctamente.']);
+		$this->model->toUpdate($id, $data_update);
+		return $this->respond(['reponse' => 'Producto actualizado correctamente.']);
 	}
 
 	public function list()
 	{
 		$this->configheader();
-		$data_query = $this->model->getAllItems(); 
-		$data_transform = $this->array_query->data($data_query)->transform('id',['id_categoria','subcategorias'])->get();
+		$data_query = $this->model->getAllItems();
+		$data_transform = $this->array_query->data($data_query)->transform('id', ['id_categoria', 'subcategorias'])->get();
 		$data = $this->datatables->data($data_transform)->makeHeaders()->get();
 		// echo '<pre> products';
 		// print_r($data);
@@ -81,7 +88,8 @@ class Products extends ResourceController
 		return $this->respond($data);
 	}
 
-	public function destroy(){
+	public function destroy()
+	{
 		$this->configheader();
 		// echo '<pre>';
 		// print_r($id);
@@ -90,12 +98,13 @@ class Products extends ResourceController
 		// echo $id;
 		// die;
 		$this->model->destroy($id);
-		return $this->respond(['reponse'=>'Producto desactivado correctamente.']);
+		return $this->respond(['reponse' => 'Producto desactivado correctamente.']);
 	}
 
-	public function configheader(){
+	public function configheader()
+	{
 		return $this->response->setHeader('Access-Control-Allow-Origin', '*')
-		->setHeader('Access-Control-Allow-Headers', '*')
-		->setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+			->setHeader('Access-Control-Allow-Headers', '*')
+			->setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
 	}
 }

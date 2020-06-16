@@ -50,7 +50,6 @@
     <script src="<?php echo base_url('css/bootstrap/js/bootstrap.bundle.js'); ?>"></script>
     <script src="<?php echo base_url('css/bootstrap/js/bootstrap.min.js'); ?>"></script>
     <script src="<?php echo base_url('js/modules/chartjs/chart.js'); ?>"></script>
-
 </body>
 
 </html>

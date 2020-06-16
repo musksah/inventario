@@ -1,5 +1,6 @@
 // register the grid component
 const url_base = "http://127.0.0.1/inventario/public/auth/login";
+const url_base_admin = "http://127.0.0.1/inventario/public";
 
 Vue.component('demo-grid', {
    template: '#grid-template',
@@ -8,7 +9,7 @@ Vue.component('demo-grid', {
       columns: Array,
       filterKey: String,
       isActive: true,
-      hasError: true
+      hasError: true,
    },
    data: function () {
       var sortOrders = {}
@@ -78,7 +79,11 @@ const vue = new Vue({
       login: function () {
          this.$http.post(`${url_base}/check`,this.createParams).then(function (res) {
             console.log(res.data);
-            // this.gridData = res.data.data;
+            if (res.data.response === 'ok'){
+               window.location.href = `${url_base_admin}/inventario/public/admin/`;
+            }else{
+               alert("Credenciales inválidas");
+            }
          }, function () {
             alert('Ocurrió un error al logearse.');
          });

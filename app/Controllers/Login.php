@@ -4,20 +4,28 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\UserModel;
+use App\Controllers\SessionController;
 
 class Login extends ResourceController
 {
     protected $modelName = '\App\Models\ProductModel';
     protected $format    = 'json';
     protected $userModel = null;
+    protected $session = null;
+    protected $session_controller = null;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
+        $this->session = session();
+        $this->session_controller = new SessionController();
     }
 
     public function index()
     {
+        if ($this->session_controller->hasSession()) {
+            return view('user/index');
+        }
         return view('auth/login');
     }
 
@@ -28,28 +36,41 @@ class Login extends ResourceController
         $credentials = $this->request->getPost();
         // print_r($credentials);
         // $hash = password_hash($credentials['password'], PASSWORD_DEFAULT);
-        $password_hash_db = $this->getPassword($credentials['username']);
+        $data_user_db = $this->getPassword($credentials['username']);
+        $password_hash_db = !empty($data_user_db['password']) ? $data_user_db['password'] : '';
         if (password_verify($credentials['password'], $password_hash_db) && $password_hash_db) {
-            echo 'Has iniciado sessión!';
+            unset($data_user_db['password']);
+            $this->setSession($data_user_db);
+            return $this->respond(['response' => 'ok']);
         } else {
-            echo 'Credenciales inválidas.';
+            return $this->respond(['response' => 'not']);
         }
     }
 
-    public function getPassword($user){
+    public function destroySession()
+    {
+        $this->session->destroy();
+        return view('auth/login');
+    }
+
+    public function getPassword($user)
+    {
         // echo '<pre> get dataUser';
         // print_r($user);
         // die;
         $user_data = $this->userModel->where('username', $user)->first();
-        print_r($user_data);
-        return !empty($user_data['password'])?$user_data['password']:false;
+        // print_r($user_data);
+        return !empty($user_data) ? $user_data : false;
     }
 
-    public function store()
+    public function setSession($data_session)
     {
-        $this->configheader();
-        $data_insert = $this->request->getPost();
+        $this->session->set($data_session);
+        // $this->session->get('username');
+        // echo ' el usuario es ';
+        // print_r($user);
     }
+
 
     public function updating()
     {

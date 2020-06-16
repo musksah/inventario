@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Libraries\DataTables;
 use App\Libraries\SelectB;
 use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\SessionController;
 
 class SubCategories extends ResourceController
 {
@@ -12,16 +13,22 @@ class SubCategories extends ResourceController
 	protected $format    = 'json';
 	private $datatables = null;
 	private $selectb = null;
+	protected $session_controller = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
 		$this->selectb = new SelectB();
+		$this->session_controller = new SessionController();
 	}
 
 	public function index()
 	{
-		return view('subcategory/index');
+		if($this->session_controller->hasSession()){
+            $data['rol'] = $this->session_controller->getRol();    
+			return view('subcategory/index', $data);
+        }
+		return view('auth/login');
 	}
 
 	public function store()

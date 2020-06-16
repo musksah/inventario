@@ -69,6 +69,7 @@ $routes->get('/info', 'Home::codeigniter');
 $routes->group('auth', function ($routes) {
 	$routes->get('login', 'Login::index');
 	$routes->post('login/check', 'Login::checkLogin');
+	$routes->get('login/destroy', 'Login::destroySession',['as' => 'destroy_session']);
 });
 
 $routes->get('prueba', 'Home::check_database');

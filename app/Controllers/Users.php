@@ -4,21 +4,28 @@ namespace App\Controllers;
 
 use App\Libraries\DataTables;
 use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\SessionController;
 
 class Users extends ResourceController
 {
 	protected $modelName = '\App\Models\UserModel';
 	protected $format    = 'json';
 	private $datatables = null;
+	protected $session_controller = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
+		$this->session_controller = new SessionController();
 	}
 
 	public function index()
 	{
-		return view('user/index');
+		if($this->session_controller->hasSession()){
+            $data['rol'] = $this->session_controller->getRol();    
+			return view('user/index', $data);
+        }
+		return view('auth/login');
 	}
 
 	public function store()

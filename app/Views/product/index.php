@@ -7,7 +7,9 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <?php if ($rol === 'Administrador') : ?>
         <td style="font-weight:bold;">Acciones</td>
+        <?php endif ?> 
         <th v-for="key in columns"
           @click="sortBy(key)"
           :class="{ active: sortKey == key }">
@@ -19,7 +21,9 @@
     </thead>
     <tbody>
       <tr v-for="entry in filteredData">
+        <?php if ($rol === 'Administrador') : ?>
         <td><button class="btn btn-danger mr-2" @click="deleteRegister(entry)"><i class="fas fa-trash"></i></button><button class="btn btn-primary" @click="updateRegister(entry)"><i class="fas fa-pen"></i></button></td>
+        <?php endif ?> 
         <td v-for="key in columns">
           {{entry[key]}}
         </td>
@@ -40,7 +44,9 @@
       </demo-grid>
     </div>
     <div class="card-footer">
-      <button class="btn btn-primary" id="btn-register-product" data-toggle="modal" data-target="#registerProductModal">Registrar</button>
+      <?php if ($rol === 'Administrador') : ?>
+        <button class="btn btn-primary" id="btn-register-product" data-toggle="modal" data-target="#registerProductModal">Registrar</button>
+      <?php endif ?>
       <button class="btn btn-primary" id="btn-update-product" data-toggle="modal" data-target="#updateProductModal" hidden></button>
     </div>
   </div>
@@ -63,7 +69,7 @@
             <div class="form-group">
               <label for="selectRegistesSubCategory">SubCategoría</label>
               <select v-model="form.id_sub_category" id="selectRegistesSubCategory" class="custom-select" multiple required>
-                <option v-for="option_category in options_form_subcategory" :value="option_category.value" >{{ option_category.text }}</option>
+                <option v-for="option_category in options_form_subcategory" :value="option_category.value">{{ option_category.text }}</option>
               </select>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>

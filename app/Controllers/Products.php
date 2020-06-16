@@ -3,17 +3,23 @@
 namespace App\Controllers;
 
 use App\Libraries\DataTables;
+use App\Libraries\ArrayQueries;
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\SubCategoryProductModel;
 
 class Products extends ResourceController
 {
 	protected $modelName = '\App\Models\ProductModel';
 	protected $format    = 'json';
 	private $datatables = null;
+	private $array_query = null;
+	private $subcategoryproduct = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
+		$this->array_query = new ArrayQueries();
+		$this->subcategoryproduct = new SubCategoryProductModel();
 	}
 
 	public function index()
@@ -30,15 +36,19 @@ class Products extends ResourceController
 		// die;
 		$list_id_subcategories = explode(',',$data_insert['id_sub_category']);
         unset($data_insert['id_sub_category']);
-		echo ' insert id <pre> ';
-		// print_r($data_insert);
+		// echo ' insert id <pre> ';
+		// print_r($list_id_subcategories);
 		// die;
 		$this->model->save($data_insert);
-		$id = $this->model->getInsertID();
-		foreach ($list_id_subcategories as $key => $value) {
-			
+		$id_product = $this->model->getInsertID();
+		// echo ' insert sub';
+		foreach ($list_id_subcategories as $id_category) {
+			$data_in['date'] = date("Y-m-d H:i:s"); 
+			$data_in['id_sub_category'] = $id_category; 
+			$data_in['id_product'] = $id_product; 
+			$this->subcategoryproduct->save($data_in);
 		}
-		die;
+		// die;
 		return $this->respond(['reponse'=>'Producto creado correctamente.']);
 	}
 
@@ -62,7 +72,12 @@ class Products extends ResourceController
 	public function list()
 	{
 		$this->configheader();
-		$data = $this->datatables->data($this->model->getAllItems())->makeHeaders()->get();
+		$data_query = $this->model->getAllItems(); 
+		$data_transform = $this->array_query->data($data_query)->transform('id',['id_categoria','subcategorias'])->get();
+		$data = $this->datatables->data($data_transform)->makeHeaders()->get();
+		// echo '<pre> products';
+		// print_r($data);
+		// die;
 		return $this->respond($data);
 	}
 

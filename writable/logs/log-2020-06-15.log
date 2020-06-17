@@ -1,0 +1,334 @@
+CRITICAL - 2020-06-15 09:26:13 --> Undefined property: App\Controllers\Categories::$selectVB
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Categories.php(76): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 76, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Categories->getSelectb()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categories))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 11:39:44 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(31): App\Models\ProductModel->create(Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->store()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 12:00:57 --> syntax error, unexpected '}', expecting ';' or ','
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 [internal function]: spl_autoload_call('App\\Models\\Prod...')
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(177): class_exists('\\App\\Models\\Pro...')
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(76): CodeIgniter\RESTful\ResourceController->setModel('\\App\\Models\\Pro...')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(887): CodeIgniter\RESTful\ResourceController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 12:07:00 --> syntax error, unexpected '}', expecting ';' or ','
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 [internal function]: spl_autoload_call('App\\Models\\Prod...')
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(177): class_exists('\\App\\Models\\Pro...')
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(76): CodeIgniter\RESTful\ResourceController->setModel('\\App\\Models\\Pro...')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(887): CodeIgniter\RESTful\ResourceController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 12:07:18 --> syntax error, unexpected '}', expecting ';' or ','
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 [internal function]: spl_autoload_call('App\\Models\\Prod...')
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(177): class_exists('\\App\\Models\\Pro...')
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(76): CodeIgniter\RESTful\ResourceController->setModel('\\App\\Models\\Pro...')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(887): CodeIgniter\RESTful\ResourceController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 12:08:06 --> syntax error, unexpected '}', expecting ';' or ','
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Prod...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Prod...')
+#3 [internal function]: spl_autoload_call('App\\Models\\Prod...')
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(177): class_exists('\\App\\Models\\Pro...')
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/RESTful/ResourceController.php(76): CodeIgniter\RESTful\ResourceController->setModel('\\App\\Models\\Pro...')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(887): CodeIgniter\RESTful\ResourceController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(395): CodeIgniter\CodeIgniter->createController()
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 17:37:53 --> Unknown column 'category.name' in 'field list'
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT `subcate...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subcate...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subcate...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `subcate...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(70): App\Models\ProductModel->getAllItems()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 17:38:26 --> Unknown column 'category.name' in 'field list'
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT `subcate...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subcate...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subcate...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `subcate...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(70): App\Models\ProductModel->getAllItems()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 17:38:45 --> Unknown column 'category.name' in 'field list'
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT `subcate...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subcate...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subcate...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `subcate...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(70): App\Models\ProductModel->getAllItems()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 17:38:56 --> Unknown column 'category.name' in 'field list'
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT `subcate...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subcate...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subcate...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `subcate...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(70): App\Models\ProductModel->getAllItems()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-15 18:21:10 --> Undefined index: id
+#0 /opt/lampp/htdocs/inventario/app/Libraries/ArrayQueries.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 25, Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-15 18:33:08 --> Undefined variable: index
+#0 /opt/lampp/htdocs/inventario/app/Libraries/ArrayQueries.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-15 18:33:46 --> [] operator not supported for strings
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 18:50:04 --> Array to string conversion
+#0 /opt/lampp/htdocs/inventario/app/Libraries/ArrayQueries.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-15 18:50:31 --> Array to string conversion
+#0 /opt/lampp/htdocs/inventario/app/Libraries/ArrayQueries.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/opt/lampp/htdo...', 34, Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-15 18:56:48 --> Cannot use object of type App\Libraries\ArrayQueries as array
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(77): App\Libraries\DataTables->makeHeaders()
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 18:57:40 --> Cannot use object of type App\Libraries\ArrayQueries as array
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(77): App\Libraries\DataTables->makeHeaders()
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 19:00:30 --> Undefined index: subcategoria
+#0 /opt/lampp/htdocs/inventario/app/Libraries/ArrayQueries.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 36, Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(76): App\Libraries\ArrayQueries->transform('id', Array)
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-15 20:39:38 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:45:29 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:46:44 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:47:13 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:47:19 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:48:30 --> Connection refused
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 20:55:25 --> Conexión rehusada
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `user`.`...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(52): App\Models\UserModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 22:26:41 --> Access denied for user '****'@'localhost' (using password: YES)
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(75): App\Models\ProductModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 22:26:41 --> Access denied for user '****'@'localhost' (using password: YES)
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/SubCategories.php(75): CodeIgniter\Model->findAll()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\SubCategories->getSelectb()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubCategories))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 22:26:52 --> Access denied for user '****'@'localhost' (using password: YES)
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#3 /opt/lampp/htdocs/inventario/app/Models/ProductModel.php(34): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/Products.php(75): App\Models\ProductModel->getAllItems()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Products->list()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Products))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 22:26:52 --> Access denied for user '****'@'localhost' (using password: YES)
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/inventario/app/Controllers/SubCategories.php(75): CodeIgniter\Model->findAll()
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\SubCategories->getSelectb()
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SubCategories))
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-15 23:25:00 --> Undefined property: App\Controllers\Home::$load
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 15, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->prueba()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 23:30:08 --> Undefined variable: db
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 27, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->check_database()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 23:30:46 --> Undefined variable: db
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 27, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->check_database()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 23:31:28 --> Undefined variable: db
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 27, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->check_database()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 23:38:10 --> Undefined variable: db
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/opt/lampp/htdo...', 27, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->check_database()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-15 23:39:15 --> Undefined property: App\Controllers\Home::$db
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/opt/lampp/htdo...', 27, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Home->check_database()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

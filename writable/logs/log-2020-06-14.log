@@ -1,0 +1,116 @@
+CRITICAL - 2020-06-14 10:32:18 --> Undefined index: id
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 41, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-14 10:47:03 --> Undefined index: id
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 41, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-14 10:53:51 --> You must use the "set" method to update an entry.
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2415): CodeIgniter\Database\BaseBuilder->validateUpdate()
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Model.php(864): CodeIgniter\Database\BaseBuilder->update()
+#2 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(46): CodeIgniter\Model->update(Array, Array)
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-06-14 10:55:31 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::update() must be of the type array or null, string given, called in /opt/lampp/htdocs/inventario/app/Models/UserModel.php on line 38
+#0 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(38): CodeIgniter\Database\BaseBuilder->update('3', Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(46): App\Models\UserModel->destroy('3')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-14 10:57:12 --> whereIn() expects $values to be of type array or closure
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(838): CodeIgniter\Database\BaseBuilder->_whereIn('id', '3', false, 'AND ', NULL)
+#1 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(41): CodeIgniter\Database\BaseBuilder->whereIn('id', '3')
+#2 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(46): App\Models\UserModel->destroy('3')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-06-14 10:58:25 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::update() must be of the type array or null, string given, called in /opt/lampp/htdocs/inventario/app/Models/UserModel.php on line 38
+#0 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(38): CodeIgniter\Database\BaseBuilder->update('3', Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(46): App\Models\UserModel->destroy('3')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-14 10:59:52 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::update() must be of the type array or null, string given, called in /opt/lampp/htdocs/inventario/app/Models/UserModel.php on line 38
+#0 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(38): CodeIgniter\Database\BaseBuilder->update('3', Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(46): App\Models\UserModel->destroy('3')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-14 11:00:42 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::update() must be of the type array or null, string given, called in /opt/lampp/htdocs/inventario/app/Models/UserModel.php on line 38
+#0 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(38): CodeIgniter\Database\BaseBuilder->update('4', Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(45): App\Models\UserModel->destroy('4')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-14 11:00:49 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::update() must be of the type array or null, string given, called in /opt/lampp/htdocs/inventario/app/Models/UserModel.php on line 38
+#0 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(38): CodeIgniter\Database\BaseBuilder->update('4', Array)
+#1 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(45): App\Models\UserModel->destroy('4')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#4 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-14 11:08:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '0 = '4'
+WHERE `state` = 0' at line 1
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('UPDATE `user` S...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2441): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(39): CodeIgniter\Database\BaseBuilder->update(Array, Array)
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(47): App\Models\UserModel->destroy('4')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-14 11:11:12 --> Unknown column 'active' in 'field list'
+#0 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('UPDATE `user` S...')
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2441): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 /opt/lampp/htdocs/inventario/app/Models/UserModel.php(44): CodeIgniter\Database\BaseBuilder->update()
+#5 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(47): App\Models\UserModel->destroy('4')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-14 16:18:57 --> Declaration of App\Controllers\Users::update() should be compatible with CodeIgniter\RESTful\ResourceController::update($id = NULL)
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Declaration of ...', '/opt/lampp/htdo...', 32, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(365): require_once('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->requireFile('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(258): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#5 [internal function]: spl_autoload_call('App\\Controllers...')
+#6 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(865): class_exists('\\App\\Controller...', true)
+#7 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(390): CodeIgniter\CodeIgniter->startController()
+#8 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-06-14 16:23:03 --> Undefined index: id
+#0 /opt/lampp/htdocs/inventario/app/Controllers/Users.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/opt/lampp/htdo...', 55, Array)
+#1 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(914): App\Controllers\Users->destroy()
+#2 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 /opt/lampp/htdocs/inventario/vendor/codeigniter4/framework/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /opt/lampp/htdocs/inventario/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

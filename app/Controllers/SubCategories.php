@@ -6,6 +6,7 @@ use App\Libraries\DataTables;
 use App\Libraries\SelectB;
 use CodeIgniter\RESTful\ResourceController;
 use App\Controllers\SessionController;
+use App\Models\SubCategoryProductModel;
 
 class SubCategories extends ResourceController
 {
@@ -14,12 +15,14 @@ class SubCategories extends ResourceController
 	private $datatables = null;
 	private $selectb = null;
 	protected $session_controller = null;
+	protected $subcategoryProductModel = null;
 
 	public function __construct()
 	{
 		$this->datatables = new DataTables();
 		$this->selectb = new SelectB();
 		$this->session_controller = new SessionController();
+		$this->subcategoryProductModel = new SubCategoryProductModel();
 	}
 
 	public function index()
@@ -74,12 +77,13 @@ class SubCategories extends ResourceController
 		$id = $this->request->getPost()['id'];
 		// echo $id;
 		// die;
+		$this->subcategoryProductModel->destroyByField('id_sub_category',$id);
 		$this->model->destroy($id);
 		return $this->respond(['reponse'=>'SubCategoría desactivada correctamente.']);
 	}
 
 	public function getSelectb(){
-		$query = $this->model->findAll();
+		$query = $this->model->getAllItems();
 		$query = $this->selectb->data($query)->make('id','name')->get();
 		return $this->respond($query);
 	}

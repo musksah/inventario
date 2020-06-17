@@ -88,6 +88,7 @@ const vue = new Vue({
          id: '',
          name: '',
          id_sub_category: ['null'],
+         name_categories: ['null'],
          state: null,
       },
       options_form_subcategory:[]
@@ -147,12 +148,12 @@ const vue = new Vue({
       updateRegister(data) {
          console.log("Se ha dado click en editar");
          console.log(data);
+         this.form_update.id = data.id 
+         this.form_update.id_sub_category = data.id_subcategoria.split(',') 
          this.form_update.name = data.name 
          this.form_update.state = data.state 
-         this.form_update.quantity_products = data.quantity_products 
-         this.form_update.id = data.id 
-         this.form_update.id_category = data.id_category 
-         this.closeModal(document.getElementById('btn-update-user'), 'click');
+         this.form_update.name_categories = data.subcategorias.split(',') 
+         this.closeModal(document.getElementById('btn-update-product'), 'click');
       },
       closeModal: function (el, etype) {
          if (el.fireEvent) {
@@ -186,6 +187,7 @@ const vue = new Vue({
          params.append("id", this.form_update.id);
          params.append("name", this.form_update.name);
          params.append("state", this.form_update.state);
+         params.append("id_sub_category", this.form_update.id_sub_category);
          return params;
       },
    },

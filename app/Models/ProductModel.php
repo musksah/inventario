@@ -27,7 +27,7 @@ class ProductModel extends Model
     public function getAllItems()
     {
         return $this->db->table('product')
-            ->select('product.id, product.name, product.state, sub_category.id as `id_categoria`, sub_category.name as `subcategorias`')
+            ->select('product.id, product.name, product.state, sub_category.id as `id_subcategoria`, sub_category.name as `subcategorias`')
             ->join('subcategory_product', 'subcategory_product.id_product = product.id')
             ->join('sub_category', 'sub_category.id = subcategory_product.id_sub_category')
             ->where('product.state', 1)

@@ -98,6 +98,12 @@
               <input v-model="form_update.name" type="text" class="form-control" placeholder="Ingresar Categoría" required>
             </div>
             <div class="form-group">
+              <label for="selectRegistesSubCategory">SubCategoría</label>
+              <select v-model="form_update.id_sub_category" id="selectRegistesSubCategory" class="custom-select" multiple required>
+                <option v-for="option_category in options_form_subcategory" :value="option_category.value">{{ option_category.text }}</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="selectUpdateState">Estado</label>
               <select v-model="form_update.state" :value="form_update.state" id="selectUpdateState" class="custom-select" required>
                 <option selected value=null>Seleccionar...</option>

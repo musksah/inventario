@@ -81,7 +81,7 @@ const vue = new Vue({
          id_category: null,
       },
       searchQuery: '',
-      gridColumns: ['id','name','quantity_products','id_category'],
+      gridColumns: ['id','name','quantity_products','categoría'],
       gridData: [],
       modal_title: "Registro de SubCategorías",
       modal_title_update: "Actualizar SubCategoría",

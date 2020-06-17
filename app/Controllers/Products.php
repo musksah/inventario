@@ -46,10 +46,12 @@ class Products extends ResourceController
 		// echo ' insert id <pre> ';
 		// print_r($list_id_subcategories);
 		// die;
+		
 		$this->model->save($data_insert);
 		$id_product = $this->model->getInsertID();
 		// echo ' insert sub';
 		foreach ($list_id_subcategories as $id_category) {
+			// $quantity_products = 
 			$data_in['date'] = date("Y-m-d H:i:s");
 			$data_in['id_sub_category'] = $id_category;
 			$data_in['id_product'] = $id_product;
@@ -63,16 +65,24 @@ class Products extends ResourceController
 	{
 		$this->configheader();
 		$data_update = $this->request->getPost();
-		if (!empty($data_update['password'])) {
-			$data_update['password'] = password_hash($data_update['password'], PASSWORD_DEFAULT);
-		}
+
 		$id = $data_update['id'];
 		unset($data_update['id']);
+		$list_id_subcategories = explode(',', $data_update['id_sub_category']);
+		unset($data_update['id_sub_category']);
+		
+		$this->model->toUpdate($id, $data_update);
+		$this->subcategoryproduct->destroyByField('id_product',$id);
+		foreach ($list_id_subcategories as $id_category) {
+			$data_in['date'] = date("Y-m-d H:i:s");
+			$data_in['id_sub_category'] = $id_category;
+			$data_in['id_product'] = $id;
+			$this->subcategoryproduct->save($data_in);
+		}
 		// echo '<pre>';
 		// print_r($data_update);
 		// echo ' id '.$id.' ';
 		// die;
-		$this->model->toUpdate($id, $data_update);
 		return $this->respond(['reponse' => 'Producto actualizado correctamente.']);
 	}
 
@@ -80,7 +90,10 @@ class Products extends ResourceController
 	{
 		$this->configheader();
 		$data_query = $this->model->getAllItems();
-		$data_transform = $this->array_query->data($data_query)->transform('id', ['id_categoria', 'subcategorias'])->get();
+		$data_transform = $this->array_query->data($data_query)->transform('id', ['id_subcategoria', 'subcategorias'])->get();
+		// echo '<pre>';
+		// print_r($data_transform);
+		// die;
 		$data = $this->datatables->data($data_transform)->makeHeaders()->get();
 		// echo '<pre> products';
 		// print_r($data);
@@ -97,6 +110,7 @@ class Products extends ResourceController
 		$id = $this->request->getPost()['id'];
 		// echo $id;
 		// die;
+		$this->subcategoryproduct->destroyByField('id_product',$id);
 		$this->model->destroy($id);
 		return $this->respond(['reponse' => 'Producto desactivado correctamente.']);
 	}

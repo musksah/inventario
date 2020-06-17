@@ -64,6 +64,7 @@ $routes->group('admin', function ($routes) {
 });
 
 // Otras Rutas
+$routes->get('/', 'Users::index');
 $routes->get('/info', 'Home::codeigniter');
 
 $routes->group('auth', function ($routes) {

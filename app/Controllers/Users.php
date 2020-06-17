@@ -32,7 +32,8 @@ class Users extends ResourceController
 	{
 		$this->configheader();
 		$data_insert = $this->request->getPost();
-		$this->model->create($data_insert);
+		$data_insert['password'] =  password_hash($data_insert['password'], PASSWORD_DEFAULT);
+ 		$this->model->create($data_insert);
 		return $this->respond(['reponse'=>'Usuario creado correctamente.']);
 	}
 

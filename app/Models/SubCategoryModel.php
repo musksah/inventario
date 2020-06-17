@@ -30,7 +30,7 @@ class SubCategoryModel extends Model
     public function getAllItems()
     {
         return $this->db->table('sub_category')
-            ->select('sub_category.id, sub_category.name, sub_category.state, sub_category.quantity_products, sub_category.id_category')
+            ->select('sub_category.id, sub_category.name, sub_category.state, sub_category.quantity_products, sub_category.id_category, category.name as `categoría`')
             ->join('category', 'category.id = sub_category.id_category')
             ->where('sub_category.state', 1)
             ->get()

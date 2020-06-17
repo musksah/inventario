@@ -58,7 +58,7 @@ class Login extends ResourceController
         // echo '<pre> get dataUser';
         // print_r($user);
         // die;
-        $user_data = $this->userModel->where('username', $user)->first();
+        $user_data = $this->userModel->where('username', $user)->where('state', 1)->first();
         // print_r($user_data);
         return !empty($user_data) ? $user_data : false;
     }
